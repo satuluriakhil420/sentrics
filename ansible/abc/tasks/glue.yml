@@ -1,0 +1,231 @@
+- name: Update Config1
+  community.aws.glue_job:
+    name: "ens360-dashboard-c1-dev-01"
+    role: "arn:aws:iam::533267236958:role/sentrics"
+    command_script_location: "s3://aws-glue-assets-533267236958-us-east-1/scripts/ens360-dashboard-c1-dev-01.py"
+    command_python_version: "3"
+    default_arguments:
+      "--enable-glue-datacatalog": "true"
+      "--c1.alarms.source": "enrich-analytics/CompanionOne/alarm-activity/data"
+      "--c1.events.source": "enrich-analytics/CompanionOne/companion-events/data"
+      "--job-bookmark-option": "job-bookmark-disable"
+      "--TempDir": "s3://aws-glue-assets-745796605184-us-east-1/temporary/"
+      "--c1.sfdc.source": "enrich-analytics/SFDC/enrich_sfdc/enrich_sfdc_athena_tbl_source_dir"
+      "--c1.market.alarm.target": "dashboard-sl-non-prod-01/Ensure360/dev/ens360-transformations-dev/c1/market_alarm_fact"
+      "--enable-metrics": "true"
+      "--spark-event-logs-path": "s3://aws-glue-assets-745796605184-us-east-1/sparkHistoryLogs/"
+      "--c1.market.community.target": "dashboard-sl-non-prod-01/Ensure360/dev/ens360-transformations-dev/c1/market_community"
+      "--enable-job-insights": "false"
+      "--enable-continuous-cloudwatch-log": "true"
+      "--job-language": "python"
+      "--enable-auto-scaling": "true"
+    max_retries: 0
+    timeout: 2880
+    worker_type: "G.2X"
+    number_of_workers: 25
+    glue_version: "4.0"
+    description: "c1-dev-glue job"
+    state: present
+    tags:
+      environment: "dev"
+    region: "us-east-1"
+
+
+- name: Update Config2
+  community.aws.glue_job:
+    name: "ens360-dashboard-loc-dev-01"
+    role: "arn:aws:iam::533267236958:role/sentrics"
+    command_script_location: "s3://aws-glue-assets-533267236958-us-east-1/scripts/ens360-dashboard-loc-dev-01.py"
+    command_python_version: "3"
+    default_arguments:
+      "--enable-glue-datacatalog": "true"
+      "--outlier.alarms.source": "dashboard-sl-non-prod-01/Ensure360/dev/ens360-transformations-dev/sl/outlier_alarms"
+      "--transformed.location.source": "enrich-analytics/SentricsProduction/location-details/transformed_location_details"
+      "--job-bookmark-option": "job-bookmark-disable"
+      "--TempDir": "s3://aws-glue-assets-745796605184-us-east-1/temporary/"
+      "--loc.hierarchy.alarms": "dashboard-sl-non-prod-01/Ensure360/dev/ens360-transformations-dev/sl/loc_hierarchy_alarms"
+      "--enable-metrics": "true"
+      "--locations.source": "enrich-analytics/SentricsProduction/locations"
+      "--spark-event-logs-path": "s3://aws-glue-assets-745796605184-us-east-1/sparkHistoryLogs/"
+      "--enable-job-insights": "false"
+      "--loc.hierarchy.outliers": "dashboard-sl-non-prod-01/Ensure360/dev/ens360-transformations-dev/sl/loc_hierarchy_outlier_alarms"
+      "--enable-observability-metrics": "true"
+      "--enable-continuous-cloudwatch-log": "true"
+      "--alarms.fact.source": "dashboard-sl-non-prod-01/Ensure360/dev/ens360-transformations-dev/sl/alarms"
+      "--job-language": "python"
+      "--fliter.locationtype.source": "dashboard-sl-non-prod-01/Ensure360/dev/ens360-transformations-dev/filtered_locationtype"
+      "--enable-auto-scaling": "true"
+    max_retries: 0
+    timeout: 2880
+    worker_type: "G.2X"
+    number_of_workers: 2
+    glue_version: "4.0"
+    description: "loc-dev-glue job"
+    state: present
+    tags:
+      environment: "dev"
+    region: "us-east-1"
+
+
+- name: Update Config3
+  community.aws.glue_job:
+    name: "ens360-dashboard-oc-dev-01"
+    role: "arn:aws:iam::533267236958:role/sentrics"
+    command_script_location: "s3://aws-glue-assets-533267236958-us-east-1/scripts/ens360-dashboard-oc-dev-01.py"
+    command_python_version: "3"
+    default_arguments:
+      "--onboarding.communities": "dashboard-sl-non-prod-01/Ensure360/dev/ens360-transformations-dev/dynamic_shift/community_shift"
+      "--onboarded.alarms": "dashboard-sl-non-prod-01/Ensure360/dev/ens360-transformations-dev/onboarded_data/alarms_onboarded"
+      "--enable-glue-datacatalog": "true"
+      "--job-bookmark-option": "job-bookmark-disable"
+      "--TempDir": "s3://aws-glue-assets-745796605184-us-east-1/temporary/"
+      "--onboarded.events": "dashboard-sl-non-prod-01/Ensure360/dev/ens360-transformations-dev/onboarded_data/events_onboarded"
+      "--enable-metrics": "true"
+      "--enable-spark-ui": "true"
+      "--spark-event-logs-path": "s3://aws-glue-assets-745796605184-us-east-1/sparkHistoryLogs/"
+      "--enable-job-insights": "false"
+      "--events.source": "enrich-analytics/SentricsProduction/events"
+      "--enable-observability-metrics": "true"
+      "--enable-continuous-cloudwatch-log": "true"
+      "--job-language": "python"
+      "--alarms.source": "enrich-analytics/SentricsProduction/alarms"
+      "--enable-auto-scaling": "true"
+    max_retries: 0
+    timeout: 2880
+    worker_type: "G.2X"
+    number_of_workers: 20
+    glue_version: "4.0"
+    description: "oc-dev-glue job"
+    state: present
+    tags:
+      environment: "dev"
+    region: "us-east-1"
+
+
+- name: Update Config4
+  community.aws.glue_job:
+    name: "ens360-dashboard-pc-dev-01"
+    role: "arn:aws:iam::533267236958:role/sentrics"
+    command_script_location: "s3://aws-glue-assets-533267236958-us-east-1/scripts/ens360-dashboard-pc-dev-01.py"
+    command_python_version: "3"
+    default_arguments:
+      "--pg.corporate.peers.percentiles.target": "dashboard-sl-non-prod-01/Ensure360/dev/ens360-transformations-dev/peer_groups/cp_peer_percentile"
+      "--enable-glue-datacatalog": "true"
+      "--c1.events.source": "enrich-analytics/CompanionOne/alarm-activity/data"
+      "--c1.market.alarm.source": "dashboard-sl-non-prod-01/Ensure360/dev/ens360-transformations-dev/c1/market_alarm_fact"
+      "--job-bookmark-option": "job-bookmark-disable"
+      "--pg.community.peers.percentiles.target": "dashboard-sl-non-prod-01/Ensure360/dev/ens360-transformations-dev/peer_groups/community_peer_percentile"
+      "--TempDir": "s3://aws-glue-assets-745796605184-us-east-1/temporary/"
+      "--sl.alarms.source": "dashboard-sl-non-prod-01/Ensure360/dev/ens360-transformations-dev/sl/alarms"
+      "--enable-metrics": "true"
+      "--spark-event-logs-path": "s3://aws-glue-assets-745796605184-us-east-1/sparkHistoryLogs/"
+      "--enable-job-insights": "false"
+      "--cp.shift.source": "dashboard-sl-non-prod-01/Ensure360/dev/ens360-transformations-dev/dynamic_shift/cp_shifts"
+      "--pg.community.peers.source": "dashboard-sl-non-prod-01/Ensure360/dev/ens360-transformations-dev/peer_groups/community_peers"
+      "--enable-continuous-cloudwatch-log": "true"
+      "--sfdc.source": "enrich-analytics/SFDC/enrich_sfdc/enrich_sfdc_athena_tbl_source_dir"
+      "--community.shift.source": "dashboard-sl-non-prod-01/Ensure360/dev/ens360-transformations-dev/dynamic_shift/community_shift"
+      "--job-language": "python"
+      "--pg.corporate.peers.source": "dashboard-sl-non-prod-01/Ensure360/dev/ens360-transformations-dev/peer_groups/corporate_parent_peers"
+      "--sl.community.source": "dashboard-sl-non-prod-01/Ensure360/dev/ens360-transformations-dev/sl/community"
+      "--sl.events.source": "dashboard-sl-non-prod-01/Ensure360/dev/ens360-transformations-dev/sl/events"
+      "--enable-auto-scaling": "true"
+      "--c1.market.community.source": "dashboard-sl-non-prod-01/Ensure360/dev/ens360-transformations-dev/c1/market_community"
+    max_retries: 0
+    timeout: 2880
+    worker_type: "G.2X"
+    number_of_workers: 30
+    glue_version: "4.0"
+    description: "pc-dev-glue job"
+    state: present
+    tags:
+      environment: "dev"
+    region: "us-east-1"
+
+
+- name: Update Config5
+  community.aws.glue_job:
+    name: "ens360-dashboard-pg-dev-01"
+    role: "arn:aws:iam::533267236958:role/sentrics"
+    command_script_location: "s3://aws-glue-assets-533267236958-us-east-1/scripts/ens360-dashboard-pg-dev-01.py"
+    command_python_version: "3"
+    default_arguments:
+      "--enable-glue-datacatalog": "true"
+      "--c1.events.source": "enrich-analytics/CompanionOne/companion-events/data"
+      "--job-bookmark-option": "job-bookmark-disable"
+      "--TempDir": "s3://aws-glue-assets-745796605184-us-east-1/temporary/"
+      "--loc.hierarchy.alarms": "dashboard-sl-non-prod-01/Ensure360/dev/ens360-transformations-dev/sl/loc_hierarchy_alarms"
+      "--sentricsproduction.events.source": "enrich-analytics/SentricsProduction/events"
+      "--enable-metrics": "true"
+      "--enable-spark-ui": "true"
+      "--spark-event-logs-path": "s3://aws-glue-assets-745796605184-us-east-1/sparkHistoryLogs/"
+      "--enable-job-insights": "false"
+      "--loc.hierarchy.outliers": "dashboard-sl-non-prod-01/Ensure360/dev/ens360-transformations-dev/sl/loc_hierarchy_outlier_alarms"
+      "--enable-continuous-cloudwatch-log": "true"
+      "--sfdc.source": "enrich-analytics/SFDC/enrich_sfdc/enrich_sfdc_athena_tbl_source_dir"
+      "--pg.community.peers.target": "dashboard-sl-non-prod-01/Ensure360/dev/ens360-transformations-dev/peer_groups/community_peers"
+      "--job-language": "python"
+      "--pg.corporate.peers.target": "dashboard-sl-non-prod-01/Ensure360/dev/ens360-transformations-dev/peer_groups/corporate_parent_peers"
+      "--sentricsproduction.alarms.source": "enrich-analytics/SentricsProduction/alarms"
+      "--enable-auto-scaling": "true"
+      "--c1.market.community.source": "dashboard-sl-non-prod-01/Ensure360/dev/ens360-transformations-dev/c1/market_community"
+      "--ens.community.source": "dashboard-sl-non-prod-01/Ensure360/dev/ens360-transformations-dev/sl/community"
+    max_retries: 0
+    timeout: 2880
+    worker_type: "G.2X"
+    number_of_workers: 25
+    glue_version: "4.0"
+    description: "pg-dev-glue job"
+    state: present
+    tags:
+      environment: "dev"
+    region: "us-east-1"
+
+
+- name: Update Config6
+  community.aws.glue_job:
+    name: "ens360-dashboard-sl-dev-01"
+    role: "arn:aws:iam::533267236958:role/sentrics"
+    command_script_location: "s3://aws-glue-assets-533267236958-us-east-1/scripts/ens360-dashboard-sl-dev-01.py"
+    command_python_version: "3"
+    default_arguments:
+      "--outlier.alarms.target": "dashboard-sl-non-prod-01/Ensure360/dev/ens360-transformations-dev/sl/outlier_alarms"
+      "--transformed.location.source": "enrich-analytics/SentricsProduction/location-details/transformed_location_details"
+      "--resident.dim.target": "dashboard-sl-non-prod-01/Ensure360/dev/ens360-transformations-dev/sl/resident"
+      "--alarms.fact.target": "dashboard-sl-non-prod-01/Ensure360/dev/ens360-transformations-dev/sl/alarms"
+      "--spark-event-logs-path": "s3://aws-glue-assets-745796605184-us-east-1/sparkHistoryLogs/"
+      "--caregiver.rank.target": "dashboard-sl-non-prod-01/Ensure360/dev/ens360-transformations-dev/sl/caregiver_rank"
+      "--enable-continuous-cloudwatch-log": "true"
+      "--community.shift.source": "dashboard-sl-non-prod-01/Ensure360/dev/ens360-transformations-dev/dynamic_shift/community_shift"
+      "--alarms.source": "dashboard-sl-non-prod-01/Ensure360/dev/ens360-transformations-dev/onboarded_data/alarms_onboarded"
+      "--enable-auto-scaling": "true"
+      "--community.dim.target": "dashboard-sl-non-prod-01/Ensure360/dev/ens360-transformations-dev/sl/community"
+      "--facilities.source": "enrich-analytics/SentricsProduction/facilities"
+      "--location.new.dim.target": "dashboard-sl-non-prod-01/dev/ens360-transformations-dev/sl/location_new"
+      "--enable-glue-datacatalog": "true"
+      "--caregiver.outliers.dim.target": "dashboard-sl-non-prod-01/Ensure360/dev/ens360-transformations-dev/sl/caregiver_outliers"
+      "--job-bookmark-option": "job-bookmark-disable"
+      "--TempDir": "s3://aws-glue-assets-745796605184-us-east-1/temporary/"
+      "--location.hierarchy.dim.target": "dashboard-sl-non-prod-01/dev/ens360-transformations-dev/sl/location_hierarchy"
+      "--sdfc.source": "enrich-analytics/SFDC/enrich_sfdc/enrich_sfdc_athena_tbl_source_dir"
+      "--enable-metrics": "true"
+      "--locations.source": "enrich-analytics/SentricsProduction/locations"
+      "--enable-job-insights": "false"
+      "--events.source": "dashboard-sl-non-prod-01/Ensure360/dev/ens360-transformations-dev/onboarded_data/events_onboarded"
+      "--events.dim.target": "dashboard-sl-non-prod-01/Ensure360/dev/ens360-transformations-dev/sl/events"
+      "--filter.caregivers.source": "dashboard-sl-non-prod-01/Ensure360/dev/ens360-transformations-dev/filtered_caregivers"
+      "--cp.shift.source": "dashboard-sl-non-prod-01/Ensure360/dev/ens360-transformations-dev/dynamic_shift/cp_shifts"
+      "--job-language": "python"
+      "--location.dim.target": "dashboard-sl-non-prod-01/dev/ens360-transformations-dev/sl/location"
+    max_retries: 0
+    timeout: 2880
+    worker_type: "G.2X"
+    number_of_workers: 20
+    glue_version: "4.0"
+    description: "sl-dev-glue job"
+    state: present
+    tags:
+      environment: "dev"
+    region: "us-east-1"
+
+

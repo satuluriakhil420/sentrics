@@ -1,0 +1,5 @@
+- name: Executing main playbook
+  hosts: localhost
+  become: yes
+  roles:
+  - name: abc
