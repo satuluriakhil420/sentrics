@@ -1,34 +1,34 @@
 - name: Update Config1
   community.aws.glue_job:
-    name: "ens360-dashboard-c1-dev-01"
-    role: "arn:aws:iam::533267236958:role/sentrics"
-    command_script_location: "s3://aws-glue-assets-533267236958-us-east-1/scripts/ens360-dashboard-c1-dev-01.py"
-    command_python_version: "3"
+    name: 
+    role: 
+    command_script_location: 
+    command_python_version: 
     default_arguments:
-      "--enable-glue-datacatalog": "true"
-      "--c1.alarms.source": "enrich-analytics/CompanionOne/alarm-activity/data"
-      "--c1.events.source": "enrich-analytics/CompanionOne/companion-events/data"
-      "--job-bookmark-option": "job-bookmark-disable"
-      "--TempDir": "s3://aws-glue-assets-745796605184-us-east-1/temporary/"
-      "--c1.sfdc.source": "enrich-analytics/SFDC/enrich_sfdc/enrich_sfdc_athena_tbl_source_dir"
-      "--c1.market.alarm.target": "dashboard-sl-non-prod-01/Ensure360/dev/ens360-transformations-dev/c1/market_alarm_fact"
-      "--enable-metrics": "true"
-      "--spark-event-logs-path": "s3://aws-glue-assets-745796605184-us-east-1/sparkHistoryLogs/"
-      "--c1.market.community.target": "dashboard-sl-non-prod-01/Ensure360/dev/ens360-transformations-dev/c1/market_community"
-      "--enable-job-insights": "false"
-      "--enable-continuous-cloudwatch-log": "true"
-      "--job-language": "python"
-      "--enable-auto-scaling": "true"
-    max_retries: 0
-    timeout: 2880
-    worker_type: "G.2X"
-    number_of_workers: 25
-    glue_version: "4.0"
-    description: "c1-dev-glue job"
-    state: present
+      "--enable-glue-datacatalog": 
+      "--c1.alarms.source": 
+      "--c1.events.source":
+      "--job-bookmark-option": 
+      "--TempDir": 
+      "--c1.sfdc.source": 
+      "--c1.market.alarm.target": 
+      "--enable-metrics": 
+      "--spark-event-logs-path": 
+      "--c1.market.community.target": 
+      "--enable-job-insights": 
+      "--enable-continuous-cloudwatch-log":
+      "--job-language": 
+      "--enable-auto-scaling": 
+    max_retries: 
+    timeout:
+    worker_type: 
+    number_of_workers: 
+    glue_version: 
+    description: 
+    state: 
     tags:
-      environment: "dev"
-    region: "us-east-1"
+      environment: 
+    region: "
 
 
 - name: Update Config2
