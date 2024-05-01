@@ -2,16 +2,16 @@ import boto3
  
 glue_client = boto3.client('glue')
  
-crawler_name = 'ens360-dashboard-crawler-dev-01'
-role = 'arn:aws:iam::533267236958:role/sentrics'  
-database_name = 'ens360-dashboard-db-dev-01'
-table_prefix = 'crawler_output'
+crawler_name = '
+role = 
+database_name = 
+table_prefix = 
  
 
 description = "description for ens360-dashboard-crawler"
 
 s3_target = {
-    'Path': 's3://dashboard-sl-non-prod-777/',
+    'Path': ,
     'Exclusions': []
 }
  
