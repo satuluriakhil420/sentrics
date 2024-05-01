@@ -1,10 +1,10 @@
 provider "aws" {
-  region = "ap-south-1"
+  region = 
 }
  
 data "aws_iam_policy_document" "assume_role" {
   statement {
-    effect = "Allow"
+    effect = 
  
     principals {
       type        = "Service"
@@ -16,7 +16,7 @@ data "aws_iam_policy_document" "assume_role" {
 }
  
 resource "aws_iam_role" "iam_for_lambda" {
-  name               = "lambda"
+  name               = 
   assume_role_policy = data.aws_iam_policy_document.assume_role.json
 }
  
@@ -28,7 +28,7 @@ data "archive_file" "lambda" {
  
 resource "aws_lambda_function" "test_lambda" {
   filename      = "lambda_function_payload.zip"
-  function_name = "sentrics"
+  function_name = 
   role          = aws_iam_role.iam_for_lambda.arn
   handler       = "lambda.handler"  
  
