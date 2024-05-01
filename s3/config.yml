@@ -7,27 +7,27 @@
   tasks:
   - name: Enabling versioning for S3 bucket
     s3_bucket:
-      name: "dashboard-sl-non-prod-777"  
-      state: present
+      name: 
+      state: 
       public_access:
         block_public_acls: true
         ignore_public_acls: true
         block_public_policy: true
         restrict_public_buckets: true
       versioning: true
-      region: "us-east-1"
+      region: 
  
   - name: Enabling logging for S3 bucket
     community.aws.s3_logging:
-      name: "dashboard-sl-non-prod-777"
-      target_bucket: "dashboard-sl-non-prod-777"  
-      target_prefix: "logs/"  
-      state: present
+      name: 
+      target_bucket:  
+      target_prefix:   
+      state: 
 
   - name: Configuring a lifecycle policy rule on bucket to expire (delete) items with a prefix of /logs/ after 30 days
     s3_lifecycle:
-      name: "dashboard-sl-non-prod-777"
-      expiration_days: 30
-      prefix: "/logs/"
-      status: enabled
-      state: present
+      name: 
+      expiration_days: 
+      prefix: 
+      status: 
+      state:
