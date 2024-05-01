@@ -8,21 +8,20 @@
   tasks:
     - name: Create Glue crawler
       community.aws.glue_crawler:
-        name: ens360-dashboard-crawler-dev-01
-        database_name: ens360-dashboard-db-dev-01 
-        role: arn:aws:iam::533267236958:role/sentrics
+        name: 
+        database_name: 
+        role: 
         schema_change_policy:
-          delete_behavior: DELETE_FROM_DATABASE
-          update_behavior: UPDATE_IN_DATABASE
+          delete_behavior: 
+          update_behavior: 
         recrawl_policy:
-          recrawl_behavior: CRAWL_EVERYTHING
+          recrawl_behavior: 
         targets:
           S3Targets:
-            - Path: "s3://dashboard-sl-non-prod-777/"
-              ConnectionName: my-connection
+            - Path: 
+              ConnectionName:
               Exclusions:
-                - "**.json"
-                - "**.yml"
-        state: present
-        region: us-east-1
+                
+        state:
+        region: 
  
