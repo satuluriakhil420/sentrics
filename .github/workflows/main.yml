@@ -22,7 +22,8 @@ jobs:
  
  
     - name: Upload to S3
-      run: aws s3 cp test.py s3://dashboard-sl-non-prod-777/test.py --region us-east-1
+      run: aws s3 cp test.py s3://aws-glue-assets-533267236958-us-east-1
+/test.py --region us-east-1
 
     - name: Cleanup
       run: rm -rf ~/.aws
