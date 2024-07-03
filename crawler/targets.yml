@@ -1,27 +1,2 @@
----
-- hosts: localhost
-  connection: local
-  become: true
-  collections:
-    - community.aws
- 
-  tasks:
-    - name: Create Glue crawler
-      community.aws.glue_crawler:
-        name: 
-        database_name: 
-        role: 
-        schema_change_policy:
-          delete_behavior: 
-          update_behavior: 
-        recrawl_policy:
-          recrawl_behavior: 
-        targets:
-          S3Targets:
-            - Path: 
-              ConnectionName:
-              Exclusions:
-                
-        state:
-        region: 
+
  
