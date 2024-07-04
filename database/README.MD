@@ -23,7 +23,7 @@ Ensure your AWS credentials are configured properly on your local machine using 
 
    pip install boto3
 
-3. Edit the script db.py and fill in the following variables:
+3. Edit the script db.py and fill in the required variables:
 
 4. Save your changes and run the script:
 
