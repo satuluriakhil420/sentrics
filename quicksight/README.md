@@ -45,8 +45,11 @@ This repository contains management scripts for handling various aspects of a we
 
 ### 4. Run each script individually to perform its respective function within the "quiksite" application.
     python account.py
+    
     python dataset.py
+    
     python datasource.py
+    
     python permission.py
     
 ## Customization
