@@ -54,10 +54,12 @@ ansible-project/
 └── vars/
     └── main.yml
 
-### You can execute the main playbook using the following 
-
+### You can execute the main playbook using the following command 
+---
+play.yml
 - name: Executing main playbook
   hosts: localhost
   become: yes
   roles:
     - name: myrole
+ansible-playbook play.yml
