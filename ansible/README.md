@@ -41,24 +41,24 @@ ansible-galaxy role init myrole
 
 ### Here's a basic directory structure for an Ansible project with the folders defaults, handlers, meta, tasks, tests, and vars:
 
-ansible-project/
-├── defaults/
-│   └── main.yml
-├── handlers/
-│   └── main.yml
-├── meta/
-│   └── main.yml
-├── tasks/
-│   └── main.yml
-├── tests/
-└── vars/
-    └── main.yml
+    ansible-project/
+    ├── defaults/
+    │   └── main.yml
+    ├── handlers/
+    │   └── main.yml
+    ├── meta/
+    │   └── main.yml
+    ├── tasks/
+    │   └── main.yml
+    ├── tests/
+    └── vars/
+        └── main.yml
 
 ### You can execute the main playbook using the following command 
-play.yml
-- name: Executing main playbook
-  hosts: localhost
-  become: yes
-  roles:
-    - name: myrole
-ansible-playbook play.yml
+    play.yml
+    - name: Executing main playbook
+      hosts: localhost
+      become: yes
+      roles:
+        - name: myrole
+    ansible-playbook play.yml
