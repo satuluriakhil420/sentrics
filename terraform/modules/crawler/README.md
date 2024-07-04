@@ -15,9 +15,9 @@ Ensure Terraform is installed and AWS credentials are configured properly.
 
 ### 1. Clone the repository or download the module
 
-    git clone https://github.com/yourusername/terraform-aws-glue-crawler.git
+    git clone https://github.com/satuluriakhil420/sentrics.git
     
-    cd terraform-aws-glue-crawler
+    cd sentrics/terraform/modules/crawler/
     
 ### 2. Initialize Terraform
 
