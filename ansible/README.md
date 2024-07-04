@@ -55,8 +55,8 @@ ansible-project/
     └── main.yml
 
 ### You can execute the main playbook using the following 
-- name: Executing main playbook
-  hosts: localhost
+- name: Executing main playbook \n
+  hosts: localhost \n
   become: yes
   roles:
     - name: myrole
