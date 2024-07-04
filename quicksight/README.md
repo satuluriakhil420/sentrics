@@ -32,19 +32,23 @@ This repository contains management scripts for handling various aspects of a we
 # Usage
 ### 1. Clone the repository:
 
-   git clone https://github.com/your-username/quiksite-scripts.git
-   
-   cd quiksite-scripts
+    git clone https://github.com/satuluriakhil420/sentrics.git
+
+    cd sentrics/quicksight
    
 ### 2. Install dependencies:
 
-   pip install boto3
+    pip install boto3
    
 ### 3. Edit each script as needed, replacing placeholders with your actual AWS account details and configurations.
 
 
 ### 4. Run each script individually to perform its respective function within the "quiksite" application.
-
+    python account.py
+    python dataset.py
+    python datasource.py
+    python permission.py
+    
 ## Customization
 
    Each script can be customized to fit specific requirements of your "quiksite" application.
