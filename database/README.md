@@ -15,8 +15,9 @@ Ensure your AWS credentials are configured properly on your local machine using 
 
 ### 1. Clone the repository or download the script:
    
-    git clone https://github.com/your-username/aws-glue-database-update.git
-    cd aws-glue-database-update
+    git clone https://github.com/satuluriakhil420/sentrics.git
+
+    cd sentrics/database
  
 ### 2. Install Dependencies:
 
