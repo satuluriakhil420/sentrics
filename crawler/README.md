@@ -15,9 +15,9 @@ Ensure your AWS credentials are configured properly on your local machine using 
 
 ### 1. Clone the repository or download the script:
    
-    git clone https://github.com/your-username/aws-glue-crawler-update.git
+    git clone https://github.com/satuluriakhil420/sentrics.git
 
-    cd aws-glue-crawler-update
+    cd sentrics/crawler
 
 ### 2. Install dependencies
 
