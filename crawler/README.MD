@@ -20,8 +20,7 @@ Ensure your AWS credentials are configured properly on your local machine using 
    cd aws-glue-crawler-update
 
 2. Install dependencies
-
-pip install boto3
+   pip install boto3
 
 3. Edit the script update_crawler.py and fill in the following variables
 
