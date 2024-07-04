@@ -55,7 +55,6 @@ ansible-project/
     └── main.yml
 
 ### You can execute the main playbook using the following command 
----
 play.yml
 - name: Executing main playbook
   hosts: localhost
