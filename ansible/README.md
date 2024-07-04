@@ -54,11 +54,12 @@ Make sure python is installed in the VM
     └── vars/
         └── main.yml
 
-### You can execute the main playbook using the following command 
-    play.yml
+### The main play.yml playbook contains the below code
     - name: Executing main playbook
       hosts: localhost
       become: yes
       roles:
         - name: myrole
+
+### Run the Below Playbook using the following command
     ansible-playbook play.yml
