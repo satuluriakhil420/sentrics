@@ -13,25 +13,26 @@ Ensure your AWS credentials are configured properly on your local machine using 
 
 ## Usage
 
-1. Clone the repository or download the script:
+### 1. Clone the repository or download the script:
    
-   ```bash
-   git clone https://github.com/your-username/aws-glue-crawler-update.git
-   cd aws-glue-crawler-update
+    git clone https://github.com/your-username/aws-glue-crawler-update.git
 
-2. Install dependencies
+    cd aws-glue-crawler-update
 
-   pip install boto3
+### 2. Install dependencies
 
-3. Edit the script crawler.py and fill the required variables
+    pip install boto3
 
-4. Save your changes and run the script
+### 3. Edit the script crawler.py and fill the required variables
 
-   python crawler.py
+### 4. Save your changes and run the script
 
-5. Check the AWS Glue console or logs to verify that your crawler was updated successfully.
+    python crawler.py
+
+### 5. Check the AWS Glue console or logs to verify that your crawler was updated successfully.
 
 ## Customization
+
 Adjust the variables (crawler_name, role, database_name, table_prefix, description, s3_target) according to your AWS Glue crawler configuration needs.
 
 You can extend this script to handle additional targets (e.g., JDBC, MongoDB) or customize error handling and logging as per your requirements.
