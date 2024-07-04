@@ -29,8 +29,8 @@ Ensure your AWS credentials are configured properly on your local machine using 
 
 5. Check the AWS Glue console or logs to verify that your database was updated successfully.
 
-##Customization
-Adjust the variables (database_name, new_name, new_description) according to your AWS Glue database configuration needs.
+## Customization
+   Adjust the variables (database_name, new_name, new_description) according to your AWS Glue database configuration needs.
 
-You can extend this script to handle additional database operations or customize error handling and logging as per your requirements.
+   You can extend this script to handle additional database operations or customize error handling and logging as per your requirements.
 
