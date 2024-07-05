@@ -36,8 +36,8 @@
     terraform destroy
 
 ### 6. Outputs
-After applying the Terraform configuration, you will get the following output:
-
-bucket_name: The name of the created S3 bucket.
-Variables
-bucketname: (Default: "dashboard-sl-non-prod-777") Name of the S3 bucket to be created.
+      After applying the Terraform configuration, you will get the following output:
+      
+      bucket_name: The name of the created S3 bucket.
+      Variables
+      bucketname: (Default: "dashboard-sl-non-prod-777") Name of the S3 bucket to be created.
